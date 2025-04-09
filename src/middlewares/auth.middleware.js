@@ -10,6 +10,7 @@ export const authMiddleware = async (req, res, next) => {
         const decoded = jwt.verify(token, process.env.JWT_SECRET);
         req.user = await User.findById(decoded.id).select('-password');
         if (!req.user) return next(new ApiError(401, 'Usuario no encontrado'));
+        next();
     } catch (error) {
         return next(new ApiError(401, 'Token no valido'));
     }
