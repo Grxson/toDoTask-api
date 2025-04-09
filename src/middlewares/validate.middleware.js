@@ -1,6 +1,6 @@
 import { ApiError } from "../errors/ApiError.js";
 
-module.exports = schema => (req, res, next) => {
+export const validate = (schema) => (req, res, next) => {
     try {
         schema.parse(req.body);
         next();

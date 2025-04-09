@@ -1,4 +1,4 @@
-import { User } from '../models/user.model.js';
+import User from '../models/user.model.js';
 import { ApiError } from '../errors/ApiError.js';
 import { generateToken } from '../utils/generateToken.js';
 
